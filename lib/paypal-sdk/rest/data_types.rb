@@ -2005,7 +2005,6 @@ module PayPal::SDK
           object_of :date, String
           object_of :method, String
           object_of :note, String
-          object_of :amount, Currency
         end
       end
 
