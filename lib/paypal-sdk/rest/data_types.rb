@@ -817,9 +817,10 @@ module PayPal::SDK
         include RequestDataType
 
         class << self
-          def find(resource_id)
+          def find(resource_id, access_token = nil)
             raise ArgumentError.new("id required") if resource_id.to_s.strip.empty?
             path = "v1/payments/sale/#{resource_id}"
+            api.token = access_token unless access_token.nil?
             self.new(api.get(path))
           end
         end
